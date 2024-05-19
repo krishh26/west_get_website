@@ -174,7 +174,7 @@ h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -230,7 +230,8 @@ h6 {
   margin: 0 auto;
   top: 32%;
   transform: translateY(-50%);
-  background-image: url(../img/menu-ball.svg);
+  /* background-image: url(../img/menu-ball.svg); */
+  background-image: url(../img/arrow-blue.png);
   width: 42px;
   height: 42px;
   background-size: contain;
@@ -332,7 +333,7 @@ h6 {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #FFF;
@@ -835,7 +836,7 @@ text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 background: linear-gradient(to top right, #6C6C6C 0%, #B0B0B0 100%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
-font-family: "Koh Santepheap", serif; 
+font-family: "Koh Santepheap", serif;
 text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 -webkit-background-clip: text;
    -moz-background-clip: text;
@@ -846,7 +847,7 @@ text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 background: linear-gradient(to top right, #EAA834 0%, #FFCD4D 100%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
-font-family: "Koh Santepheap", serif; 
+font-family: "Koh Santepheap", serif;
 text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 -webkit-background-clip: text;
    -moz-background-clip: text;
@@ -857,7 +858,7 @@ text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 background: linear-gradient(to top right, #B8B8B8 0%, #C1C1C1 100%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
-font-family: "Koh Santepheap", serif; 
+font-family: "Koh Santepheap", serif;
 text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 -webkit-background-clip: text;
    -moz-background-clip: text;
