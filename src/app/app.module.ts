@@ -8,10 +8,25 @@ import { FooterComponent } from './core/components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { WhyUsComponent } from './components/why-us/why-us.component';
-import { OpportunitiesComponent } from './components/opportunities/opportunities.component';
+import { OpportunitiesComponent } from './components/opportunity/opportunities/opportunities.component';
 import { WorkingModalComponent } from './components/working-modal/working-modal.component';
 import { OurServicesComponent } from './components/our-services/our-services.component';
-import { FaqsComponent } from './components/faqs/faqs.component';
+import { FaqsComponent } from './components/faq/faqs/faqs.component';
+import { FaqAboutComponent } from './components/faq/faq-about/faq-about.component';
+import { CostPricingComponent } from './components/faq/cost-pricing/cost-pricing.component';
+import { LegalAndComplianceComponent } from './components/faq/legal-and-compliance/legal-and-compliance.component';
+import { RegistrationProcessComponent } from './components/faq/registration-process/registration-process.component';
+import { PartnershipOpportunityComponent } from './components/faq/partnership-opportunity/partnership-opportunity.component';
+import { ProjectManagementComponent } from './components/faq/project-management/project-management.component';
+import { ServiceOfferingComponent } from './components/faq/service-offering/service-offering.component';
+import { SupplierElgibityCriteriaComponent } from './components/faq/supplier-elgibity-criteria/supplier-elgibity-criteria.component';
+import { SupportAndAccountManagementComponent } from './components/faq/support-and-account-management/support-and-account-management.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { QualityAssuranceControlComponent } from './components/opportunity/quality-assurance-control/quality-assurance-control.component';
+import { OpportunitiesWebDevelopmentComponent } from './components/opportunity/opportunities-web-development/opportunities-web-development.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,11 +39,27 @@ import { FaqsComponent } from './components/faqs/faqs.component';
     OpportunitiesComponent,
     WorkingModalComponent,
     OurServicesComponent,
-    FaqsComponent
+    FaqsComponent,
+    FaqAboutComponent,
+    CostPricingComponent,
+    LegalAndComplianceComponent,
+    RegistrationProcessComponent,
+    PartnershipOpportunityComponent,
+    ProjectManagementComponent,
+    ServiceOfferingComponent,
+    SupplierElgibityCriteriaComponent,
+    SupportAndAccountManagementComponent,
+    LoginComponent,
+    RegisterComponent,
+    QualityAssuranceControlComponent,
+    OpportunitiesWebDevelopmentComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
