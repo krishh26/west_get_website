@@ -20,6 +20,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { OpportunitiesWebDevelopmentComponent } from './components/opportunity/opportunities-web-development/opportunities-web-development.component';
 import { QualityAssuranceControlComponent } from './components/opportunity/quality-assurance-control/quality-assurance-control.component';
+import { GeneralComponent } from './components/faq/general/general.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,10 @@ const routes: Routes = [
   {
     path: 'faq/support',
     component: SupportAndAccountManagementComponent
+  },
+  {
+    path: 'faq/general',
+    component: GeneralComponent
   },
   {
     path: 'opportunities',
