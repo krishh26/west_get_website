@@ -27,6 +27,7 @@ import { QualityAssuranceControlComponent } from './components/opportunity/quali
 import { OpportunitiesWebDevelopmentComponent } from './components/opportunity/opportunities-web-development/opportunities-web-development.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { GeneralComponent } from './components/faq/general/general.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegisterComponent,
     QualityAssuranceControlComponent,
-    OpportunitiesWebDevelopmentComponent
+    OpportunitiesWebDevelopmentComponent,
+    GeneralComponent
   ],
   imports: [
     BrowserModule,
