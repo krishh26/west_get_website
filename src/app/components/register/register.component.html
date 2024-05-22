@@ -86,19 +86,7 @@
             <div class="card-body">
               <div class="row mb-4">
                 <div class="col-12 text-center">
-                  <div style="display: flex;">
-                  <!-- <span style="margin-right: 23rem;">Back</span>  -->
-                  <button
-                  type="button"
-                  class="btn btn-sm btn-lightgray box-shadow">
-                  Back
-                </button> 
-                    <h1  class="HeadingTitle">
-                      Hello!
-                    </h1>
-                  </div>
-
-                  <!-- <h1 class="HeadingTitle">Hello!</h1> -->
+                  <h1 class="HeadingTitle">Hello!</h1>
                   <p>
                     Fill out the following information to register as a supplier
                     with us.
@@ -189,17 +177,29 @@
                           Etc..,)</small
                         ></label
                       >
-                      <select class="form-select" formControlName="sector">
+                      <ng-select mul class="form-select custom-ng-select-option" [items]="categoriesOptions"
+                      bindLabel="item_text"
+                      [multiple]="true"
+                      bindValue="item_value"
+                      formControlName="sector">
+                      </ng-select>
+                      <!-- <select class="form-select" formControlName="sector">
                         <option value="" disabled selected>Select Categories</option>
                         <option value="categories1">Categories 1</option>
                         <option value="categories2">Categories 2</option>
                         <option value="categories3">Categories 3</option>
-                      </select>
+                      </select> -->
                       <span class="text-danger" *ngIf="step2Form.controls.sector?.touched && step2Form.controls.sector?.errors?.['required']">Please select sector</span>
                     </div>
                   </div>
                 </div>
                 <div class="form-group text-center mt-4">
+                  <button
+                    type="button"
+                    class="btn btn-lightgray box-shadow"
+                    (click)="backPage(1)">
+                    Back
+                  </button>
                   <button
                     type="button"
                     class="btn btn-lightgray box-shadow"
@@ -387,6 +387,12 @@
         </div>
   
         <div class="form-group text-center mt-4">
+          <button
+                    type="button"
+                    class="btn btn-lightgray box-shadow"
+                    (click)="backPage(1)">
+                    Back
+                  </button>
           <button
             type="button"
             class="btn btn-lightgray box-shadow"

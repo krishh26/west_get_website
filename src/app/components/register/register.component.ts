@@ -8,10 +8,15 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  activeStep: number = 1;
+  activeStep: number = 2;
   options = [
     { item_value: 'IT Service', item_text: 'IT Service' },
     { item_value: 'IT Product', item_text: 'IT Product' },
+  ];
+  categoriesOptions = [
+    { item_value: 'categories1', item_text: 'Categories 1' },
+    { item_value: 'categories2', item_text: 'Categories 2' },
+    { item_value: 'categories3', item_text: 'Categories 3' },
   ];
 
   step1 = {
@@ -98,5 +103,9 @@ export class RegisterComponent {
     }, (error) => {
 
     })
+  }
+
+  backPage(activePage : number) {
+    this.activeStep = Number(activePage);
   }
 }
