@@ -8,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  activeStep: number = 2;
+  activeStep: number = 1;
   options = [
     { item_value: 'IT Service', item_text: 'IT Service' },
     { item_value: 'IT Product', item_text: 'IT Product' },
