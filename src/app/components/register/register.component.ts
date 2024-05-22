@@ -9,9 +9,14 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent {
   activeStep: number = 1;
+  options = [
+    { item_value: 'IT Service', item_text: 'IT Service' },
+    { item_value: 'IT Product', item_text: 'IT Product' },
+  ];
 
   step1 = {
-    email: new FormControl("", [Validators.required]),
+    companyName: new FormControl("", [Validators.required]),
+    email: new FormControl("", [Validators.required,Validators.email]),
     password: new FormControl("", [Validators.required]),
     name: new FormControl("", [Validators.required]),
     designation: new FormControl("", [Validators.required]),
@@ -19,26 +24,36 @@ export class RegisterComponent {
   };
 
   step2 = {
-    companyName: new FormControl("", [Validators.required]),
-    industry: new FormControl("", [Validators.required]),
+    // industry: new FormControl("", [Validators.required]),
     numberOfBranch: new FormControl("", [Validators.required]),
-    registerNumber: new FormControl("", [Validators.required]),
+    registerNumber: new FormControl("",),
     mainOfficeAddress: new FormControl("", [Validators.required]),
     website: new FormControl("", [Validators.required]),
-    companyContactNumber: new FormControl("", [Validators.required]),
+    companyContactNumber: new FormControl(""),
     numberOfEmployees: new FormControl("", [Validators.required]),
     sector: new FormControl("", [Validators.required]),
   };
 
+  step3 = {
+    plan: new FormControl("", [Validators.required]),
+  };
+
   step1Form = new FormGroup(this.step1, []);
   step2Form = new FormGroup(this.step2, []);
+  step3Form = new FormGroup(this.step3, []);
 
   constructor(
     private projectService: ProjectService
   ) {
 
   }
-
+  NumberOnly(event: any): boolean {
+    const charCode = event.which ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+  }
   nextStep(step: number) {
     switch (step) {
       case 1:
@@ -54,10 +69,11 @@ export class RegisterComponent {
         }
         break;
       case 3:
-        this.activeStep = 4;
+        this.activeStep = 6;
+        this.submitForm();
         break;
       case 4:
-        this.activeStep = 5;
+        // this.activeStep = 5;
         break;
       case 5:
         // this.activeStep = 6;
@@ -69,8 +85,10 @@ export class RegisterComponent {
   submitForm() {
     const payload = {
       ...this.step1Form.value,
-      ...this.step2Form.value
+      ...this.step2Form.value,
+      ...this.step3Form.value
     }
+    console.log('payload :', payload);
     this.projectService.register(payload).subscribe((response) => {
       if (response?.status) {
         this.activeStep = 6;

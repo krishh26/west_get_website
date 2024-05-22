@@ -28,6 +28,7 @@ import { OpportunitiesWebDevelopmentComponent } from './components/opportunity/o
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GeneralComponent } from './components/faq/general/general.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { GeneralComponent } from './components/faq/general/general.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
