@@ -21,7 +21,7 @@ export class RegisterComponent {
 
   step1 = {
     companyName: new FormControl("", [Validators.required]),
-    email: new FormControl("", [Validators.required,Validators.email]),
+    email: new FormControl("", [Validators.required, Validators.email]),
     password: new FormControl("", [Validators.required]),
     name: new FormControl("", [Validators.required]),
     designation: new FormControl("", [Validators.required]),
@@ -55,7 +55,7 @@ export class RegisterComponent {
   NumberOnly(event: any): boolean {
     const charCode = event.which ? event.which : event.keyCode;
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        return false;
+      return false;
     }
     return true;
   }
@@ -105,7 +105,8 @@ export class RegisterComponent {
     })
   }
 
-  backPage(activePage : number) {
+  backPage(activePage: number) {
     this.activeStep = Number(activePage);
   }
+
 }
