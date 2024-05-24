@@ -1103,12 +1103,27 @@ Login Page CSS
 }
 
 .company-details{
-  background-image: url("../img/login-image.png");
+  /* background-image: url("../img/login-image.png");
   background-attachment: scroll;
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 400px;
+  background-size: cover; */
+  min-height: 520px;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 30px;
+  position: relative;
+  padding: 5rem;
+}
+.company-details::before{
+  content: "";
+  background-image: url("../img/new-ribbon.png");
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 147px;
+  position: absolute;
+  top: -10px;
+  left:-10px;
 }
 
 /*==========================================
