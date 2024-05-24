@@ -1109,7 +1109,7 @@ Login Page CSS
   background-repeat: no-repeat;
   background-size: cover; */
   min-height: 520px;
-  background-color: transparent;
+  background-color: #E9E9E9;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   border-radius: 30px;
   position: relative;
