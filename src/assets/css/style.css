@@ -237,7 +237,7 @@ ul.listing li{
   margin: 0 auto;
   top: 32%;
   transform: translateY(-50%);
-  background-image: url(../img/menu-ball.svg);
+  /* background-image: url(../img/menu-ball.svg); */
   width: 42px;
   height: 42px;
   background-size: contain;
