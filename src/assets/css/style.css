@@ -33,6 +33,13 @@ h6 {
   font-family: "Inter", sans-serif;
 }
 
+ul,
+ol {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style-type: none;
+}
+
 .p-8 {
   font-size: 8px !important;
 }
@@ -93,14 +100,17 @@ h6 {
 .body-top87 {
   padding-top: 87px;
 }
-ul.listing{
+
+ul.listing {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-ul.listing li{
+
+ul.listing li {
   display: block;
 }
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -181,7 +191,7 @@ ul.listing li{
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -339,7 +349,7 @@ ul.listing li{
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #FFF;
@@ -459,7 +469,9 @@ ul.listing li{
   color: #000 !important;
   border-radius: 100px;
 }
-.nav-link-btn:hover, .nav-link-btn.active {
+
+.nav-link-btn:hover,
+.nav-link-btn.active {
   background: #0077DC;
   color: #FFF !important;
   border-radius: 100px;
@@ -588,20 +600,24 @@ Button Styling
 .box-shadow {
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
 }
-.btn-lightgray{
-  background-color: #EFEFEF;
-  color: #000;
-  border-radius: 50px;
-  padding: 1rem 3rem;
-  border-color: #EFEFEF;
-  font-weight: 400;
-  min-width: 320px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+.btn-lightgray {
+  background-color: #EFEFEF !important;
+  color: #000 !important;
+  border-radius: 50px !important;
+  padding: 1rem 3rem !important;
+  border-color: #EFEFEF !important;
+  font-weight: 400 !important;
+  min-width: 320px !important;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px !important;
 }
-.btn-lightgray:hover, .btn-lightgray:focus{
-  background-color: #0077DC;
-  color: #FFF;
+
+.btn-lightgray:hover,
+.btn-lightgray:focus {
+  background-color: #0077DC !important;
+  color: #FFF !important;
 }
+
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -633,12 +649,13 @@ section {
   min-height: 250px;
   color: #FFF;
 }
-.section-registration{
+
+.section-registration {
   background-image: url(../img/silver-border-simple-abstract-background.png);
-    background-attachment: fixed;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .HeadingTitle {
@@ -683,11 +700,11 @@ Form Control CSS
 }
 
 .form-control {
-  padding: .75rem .75rem;
+  padding: .75rem .75rem !important;
 }
 
 .form-select {
-  padding: .75rem .75rem;
+  padding: .75rem .75rem !important;
 }
 
 .form-group .input-icon {
@@ -805,7 +822,7 @@ Hero Slider section
   width: 100%;
   height: 100%;
   border-radius: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .card-border {
@@ -829,73 +846,84 @@ Hero Slider section
   background-color: #fff;
   min-height: 490px;
 }
+
 .card-body {
   flex: 1 1 auto;
   padding: 1rem 1rem;
 }
-.price-card .card-body{
+
+.price-card .card-body {
   padding: 2rem;
 }
-.border-blue{
+
+.border-blue {
   border-top: 10px solid #0068C8;
 }
-.border-silver{
+
+.border-silver {
   border-top: 10px solid #D4D4D4;
 }
-.border-gold{
+
+.border-gold {
   border-top: 10px solid #FFCD4D;
 }
-.price-card .title{
+
+.price-card .title {
   font-size: 46px;
   font-weight: 700;
   padding-top: 15px;
   padding-bottom: 15px;
 }
-.blue-gradient{
+
+.blue-gradient {
   background: #0068C8;
-background: linear-gradient(to top, #0068C8 0%, #1B87EB 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-font-family: "Koh Santepheap", serif;
-text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
--webkit-background-clip: text;
-   -moz-background-clip: text;
-        background-clip: text;
+  background: linear-gradient(to top, #0068C8 0%, #1B87EB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Koh Santepheap", serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
 }
-.silver-gradient{
+
+.silver-gradient {
   background: #6C6C6C;
-background: linear-gradient(to top right, #6C6C6C 0%, #B0B0B0 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-font-family: "Koh Santepheap", serif; 
-text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
--webkit-background-clip: text;
-   -moz-background-clip: text;
-        background-clip: text;
+  background: linear-gradient(to top right, #6C6C6C 0%, #B0B0B0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Koh Santepheap", serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
 }
-.gold-gradient{
+
+.gold-gradient {
   background: #EAA834;
-background: linear-gradient(to top right, #EAA834 0%, #FFCD4D 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-font-family: "Koh Santepheap", serif; 
-text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
--webkit-background-clip: text;
-   -moz-background-clip: text;
-        background-clip: text;
+  background: linear-gradient(to top right, #EAA834 0%, #FFCD4D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Koh Santepheap", serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
 }
-.platinum-gradient{
+
+.platinum-gradient {
   background: #B8B8B8;
-background: linear-gradient(to top right, #B8B8B8 0%, #C1C1C1 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-font-family: "Koh Santepheap", serif; 
-text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
--webkit-background-clip: text;
-   -moz-background-clip: text;
-        background-clip: text;
+  background: linear-gradient(to top right, #B8B8B8 0%, #C1C1C1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Koh Santepheap", serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
 }
-.registration-card{
+
+.registration-card {
   display: block;
   position: relative;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -906,9 +934,11 @@ text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
   word-wrap: break-word;
   border-radius: 10px;
 }
-.registration-card .card-body{
+
+.registration-card .card-body {
   padding: 4rem;
 }
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -974,90 +1004,105 @@ ul.social-media li a {
 .live-chat-buttons a img {
   margin-bottom: 5px;
 }
+
 /*-----------------------------------------
 Tabs styling
 -----------------------------------------*/
-ul.nav-listtab{
+ul.nav-listtab {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-ul.nav-listtab li{
+
+ul.nav-listtab li {
   display: inline-block;
 }
-ul.nav-listtab li a{
+
+ul.nav-listtab li a {
   padding: 1rem 0.8rem;
   font-size: 14px;
   border: none;
   color: #000;
   text-decoration: underline;
 }
-.nav-tabs{
+
+.nav-tabs {
   border: none;
 }
 
-ul.nav-listtab li a.active{
+ul.nav-listtab li a.active {
   color: #0077DC;
 }
-ul.ListMenu{
+
+ul.ListMenu {
   margin: 0;
   padding: 0;
   list-style-type: none;
-}
-ul.ListMenu li{
-  display: block;
-  margin-bottom: 15px;
-}
-ul.ListMenu li a{
-  display: block;
- padding: 15px;
- text-align: center;
- color: #000;
- background: rgb(230,244,255);
- background: linear-gradient(0deg, rgba(230,244,255,1) 0%, rgba(206,233,255,1) 100%);
-}
-ul.ListMenu li a span{
- color: #0077DC;
 }
 
-ul.ListMenu2{
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-ul.ListMenu2 li{
+ul.ListMenu li {
   display: block;
   margin-bottom: 15px;
 }
-ul.ListMenu2 li a{
-  display: block;
- padding: 15px;
- text-align: center;
- color: #FFF;
- background: rgb(91,176,255);
-background: linear-gradient(0deg, rgba(91,176,255,1) 0%, rgba(0,104,200,1) 100%);
-border-radius: 50px;
-}
-ul.faqsQuestionList{
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-ul.faqsQuestionList li{
-  display: block;
-  margin-bottom: 15px;
-}
-ul.faqsQuestionList li .text-theme{
-  font-weight: 600;
-}
-.gradient-light-blue{
+
+ul.ListMenu li a {
   display: block;
   padding: 15px;
   text-align: center;
   color: #000;
-  background: rgb(230,244,255);
-  background: linear-gradient(0deg, rgba(230,244,255,1) 0%, rgba(206,233,255,1) 100%);
+  background: rgb(230, 244, 255);
+  background: linear-gradient(0deg, rgba(230, 244, 255, 1) 0%, rgba(206, 233, 255, 1) 100%);
 }
+
+ul.ListMenu li a span {
+  color: #0077DC;
+}
+
+ul.ListMenu2 {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.ListMenu2 li {
+  display: block;
+  margin-bottom: 15px;
+}
+
+ul.ListMenu2 li a {
+  display: block;
+  padding: 15px;
+  text-align: center;
+  color: #FFF;
+  background: rgb(91, 176, 255);
+  background: linear-gradient(0deg, rgba(91, 176, 255, 1) 0%, rgba(0, 104, 200, 1) 100%);
+  border-radius: 50px;
+}
+
+ul.faqsQuestionList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.faqsQuestionList li {
+  display: block;
+  margin-bottom: 15px;
+}
+
+ul.faqsQuestionList li .text-theme {
+  font-weight: 600;
+}
+
+.gradient-light-blue {
+  display: block;
+  padding: 15px;
+  text-align: center;
+  color: #000;
+  background: rgb(230, 244, 255);
+  background: linear-gradient(0deg, rgba(230, 244, 255, 1) 0%, rgba(206, 233, 255, 1) 100%);
+}
+
 .card-gradient1 {
   background: #E9F4FF;
   /* fallback for old browsers */
@@ -1070,6 +1115,7 @@ ul.faqsQuestionList li .text-theme{
 .border-radius16 {
   border-radius: 16px;
 }
+
 /*----------------------------------------
 Login CSS
 ------------------------------------------*/
@@ -1102,7 +1148,7 @@ Login Page CSS
   color: #000;
 }
 
-.company-details{
+.company-details {
   /* background-image: url("../img/login-image.png");
   background-attachment: scroll;
   background-position: center center;
@@ -1113,9 +1159,10 @@ Login Page CSS
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   border-radius: 30px;
   position: relative;
-  padding: 5rem;
+  padding: 2rem;
 }
-.company-details::before{
+
+.company-details::before {
   content: "";
   background-image: url("../img/new-ribbon.png");
   background-repeat: no-repeat;
@@ -1123,9 +1170,126 @@ Login Page CSS
   height: 147px;
   position: absolute;
   top: -10px;
-  left:-10px;
+  left: -10px;
 }
 
+/*=========================================
+Quick Chat Modal
+=========================================*/
+.modal.fade .Quickchat-modal-dialog {
+  transition: transform .3s ease-out;
+  transform: translate(0, 50px);
+}
+
+.Quickchat-modal-dialog {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 72% !important;
+  right: 4% !important;
+  margin-bottom: 0 !important;
+  width: 380px;
+}
+
+.modal.show .Quickchat-modal-dialog {
+  transform: none;
+}
+
+.modal-content {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-radius: 0px !important;
+}
+
+.modal-header {
+  background-color: #0068C8;
+  color: #FFF;
+  border-radius: 0px !important;
+}
+
+.modal-title {
+  display: block;
+}
+
+.animate-bottom {
+  position: absolute !important;
+  animation: animatebottom 0.4s;
+  bottom: 0;
+  right: -45px;
+}
+
+@keyframes animatebottom {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+.btn-fix {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #FFF !important;
+  opacity: 1 !important;
+}
+
+.btn-close {
+  background-image: none !important;
+}
+
+.btn-send-message {
+  font-size: 1.5rem !important;
+  color: #0068C8 !important;
+}
+
+.btn-send-message .bi-send-fill::before {
+  transform: rotate(45deg);
+}
+ul.chatHistory {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.chatHistory li {
+  display: block;
+  clear: both;
+}
+
+ul.chatHistory li p {
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 205px;
+  line-height: 130%;
+}
+
+ul.chatHistory li.replies p{
+  background: #435f7a;
+  color: #f5f5f5;
+}
+
+ul.chatHistory li.sender p{
+  background: #F5F5F5;
+  color: #000;
+  float: right;
+}
+.Form-message{
+  padding: 15px;
+  border-radius: 20px;
+  background-color: #F5F5F5;
+}
+
+@media screen and (min-width: 735px) {
+  ul.chatHistory li p {
+      max-width: 300px;
+  }
+}
 /*==========================================
 Media Query CSS
 ==========================================*/
@@ -1193,10 +1357,12 @@ Media Query CSS
   .mob-mb1 {
     margin-bottom: 1rem;
   }
-  .registration-card .card-body{
+
+  .registration-card .card-body {
     padding: 1rem;
   }
-  .mobile-hide{
+
+  .mobile-hide {
     display: none;
   }
 }

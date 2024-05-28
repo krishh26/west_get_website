@@ -26,9 +26,10 @@ import { RegisterComponent } from './components/register/register.component';
 import { QualityAssuranceControlComponent } from './components/opportunity/quality-assurance-control/quality-assurance-control.component';
 import { OpportunitiesWebDevelopmentComponent } from './components/opportunity/opportunities-web-development/opportunities-web-development.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { GeneralComponent } from './components/faq/general/general.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { APIInterceptor } from './core/interceptor/ApiInterceptor';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,13 @@ import { NgSelectModule } from '@ng-select/ng-select';
     HttpClientModule,
     NgSelectModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass:APIInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

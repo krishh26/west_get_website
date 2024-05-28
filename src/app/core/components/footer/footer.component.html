@@ -77,5 +77,62 @@
 <!-- <div id="preloader"></div> -->
 <div class="live-chat-buttons">
   <a routerLink="/faq"><img src="./assets/img/faq-icon.png" width="38"/><br>FAQ</a>
-  <a href="javascript;"><img src="./assets/img/live-chat-icon.png" width="38"/><br><span class="text-danger">Live</span> chat</a>
+  <a href="javascript;" data-bs-toggle="modal" data-bs-target="#QuickChatModal"><img src="./assets/img/live-chat-icon.png" width="38"/><br><span class="text-danger">Live</span> chat</a>
+</div>
+
+ <!-- Chat Modal -->
+ <div class="modal fade" id="QuickChatModal" tabindex="-1" aria-labelledby="QuickChatModalLabel" aria-hidden="true">
+  <div class="modal-dialog Quickchat-modal-dialog modal-dialog-scrollable">
+    <div class="modal-content animate-bottom">
+      <div class="modal-header" style="display: block;">
+        <div class="row">
+          <div class="col-12 modal-title">
+            <h5 class="mb-0" id="QuickChatModalLabel">WESTGATE IT HUB</h5>
+            <P class="mb-0">We'll reply as soon as we can</P>
+          </div>
+        </div>       
+        <button type="button" class="btn-close btn-fix" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div class="modal-body">
+        <ul class="chatHistory">
+          <li class="replies">
+            <p>Hi</p>
+          </li>
+          <li class="sender">
+            <p>Hey there, please leave your details so we can contact you even if you are no longer on the site.</p>
+          </li>
+          <li class="sender">
+            <form class="Form-message">               
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Full Name">
+              </div>  
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email"/>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" placeholder="Message" rows="2" cols="100"></textarea>
+              </div>
+              <div class="form-group text-center">
+                <button type="submit" class="btn btn-dark w-100">SUBMIT</button>
+              </div>
+            </form>
+          </li>
+        </ul>
+       
+      </div>
+      <div class="modal-footer" style="display: block;">
+        <div class="row justi-content-between">
+          <div class="col-10 p-0">
+            <div class="form-group mb-0">
+              <input type="text" class="form-control border-0" placeholder="Message...">
+            </div>
+          </div>
+          <div class="col-2 text-center">
+            <button type="button" class="btn btn-send-message"><i class="bi bi-send-fill"></i></button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 </div>

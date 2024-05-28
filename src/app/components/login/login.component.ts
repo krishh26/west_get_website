@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { jwtDecode } from 'jwt-decode';
 import { Patterns } from 'src/app/core/constant/validation-patterns.const';
+import { LocalStorageService } from 'src/app/services/local-storage/local-storage.service';
 import { ProjectService } from 'src/app/services/project.service';
 
 @Component({
@@ -12,14 +14,18 @@ import { ProjectService } from 'src/app/services/project.service';
 export class LoginComponent implements OnInit {
   defaultLoginForm = {
     email: new FormControl("", [Validators.required, Validators.pattern(Patterns.email)]),
-    password: new FormControl("", [Validators.required, Validators.pattern(Patterns.password)]),
+    // password: new FormControl("", [Validators.required, Validators.pattern(Patterns.password)]),
+    password: new FormControl("", [Validators.required]),
   };
 
   loginForm = new FormGroup(this.defaultLoginForm, []);
+  tokenDecode: any;
+  loginDetails: any;
 
   constructor(
     private projectService: ProjectService,
-    private router : Router
+    private router : Router,
+    private localStorageService : LocalStorageService
   ) { }
 
   ngOnInit(): void {
@@ -33,7 +39,15 @@ export class LoginComponent implements OnInit {
       this.projectService.loginUser(this.loginForm.value).subscribe((response) => {
         console.log('response', response);
         if (response?.status == true) {
+          this.localStorageService.setLoginToken(response?.data);
+          this.tokenDecode = response?.data?.token;
+          const decoded = jwtDecode(response?.data?.token);
+          this.loginDetails = decoded;
+          this.localStorageService.setLogger(this.loginDetails);
           this.router.navigateByUrl('/home');
+          setTimeout(() => {
+            window.location.reload();
+          }, 500);
         } else {
           // this.notificationService.showError(response?.message);
         }

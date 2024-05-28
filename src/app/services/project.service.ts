@@ -5,7 +5,8 @@ import { Observable } from 'rxjs';
 
 export enum AuthEndPoint {
   LOGIN_USER = '/web-user/login',
-  REGISTER = '/web-user/register'
+  REGISTER = '/web-user/register',
+  PROJECT_LIST = '/project/list'
 }
 
 @Injectable({
@@ -34,6 +35,11 @@ export class ProjectService {
   }
 
   register(payload: any): Observable<any> {
+    return this.httpClient
+      .post<any>(this.baseUrl + AuthEndPoint.REGISTER, payload, { headers: this.getHeader() });
+  }
+
+  projectList(payload :any): Observable<any> {
     return this.httpClient
       .post<any>(this.baseUrl + AuthEndPoint.REGISTER, payload, { headers: this.getHeader() });
   }
