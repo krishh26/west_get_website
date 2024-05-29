@@ -30,6 +30,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { GeneralComponent } from './components/faq/general/general.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { APIInterceptor } from './core/interceptor/ApiInterceptor';
+import { CommonModule } from '@angular/common';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,13 @@ import { APIInterceptor } from './core/interceptor/ApiInterceptor';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgSelectModule
+    NgSelectModule,
+    CommonModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: false,
+    }),
   ],
   providers: [
     {

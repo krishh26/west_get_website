@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { jwtDecode } from 'jwt-decode';
 import { Patterns } from 'src/app/core/constant/validation-patterns.const';
 import { LocalStorageService } from 'src/app/services/local-storage/local-storage.service';
+import { NotificationService } from 'src/app/services/notification/notification.service';
 import { ProjectService } from 'src/app/services/project.service';
 
 @Component({
@@ -21,15 +22,19 @@ export class LoginComponent implements OnInit {
   loginForm = new FormGroup(this.defaultLoginForm, []);
   tokenDecode: any;
   loginDetails: any;
+  projectList: any = [];
+  totalRecords: number = 0;
+  showLoader: boolean = false;
 
   constructor(
     private projectService: ProjectService,
-    private router : Router,
-    private localStorageService : LocalStorageService
+    private router: Router,
+    private localStorageService: LocalStorageService,
+    private notificationService: NotificationService,
   ) { }
 
   ngOnInit(): void {
-
+    this.getLatestProjectList();
   }
 
   login(): void {
@@ -56,4 +61,23 @@ export class LoginComponent implements OnInit {
       })
     }
   }
+
+  getLatestProjectList() {
+
+    this.projectService.projectList().subscribe((response) => {
+      this.projectList = [];
+      this.totalRecords = 0;
+      if (response?.status == true) {
+        this.showLoader = false;
+        this.projectList = response?.data?.data;
+      } else {
+        this.notificationService.showError(response?.message);
+        this.showLoader = false;
+      }
+    }, (error) => {
+      this.notificationService.showError(error?.message);
+      this.showLoader = false;
+    });
+  }
+
 }
