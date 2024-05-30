@@ -21,11 +21,7 @@
           <!-- <p><a class="btn btn-white box-shadow">Join Now</a></p> -->
         </div>
         <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 col-12 text-center">
-          <img
-            src="./assets/img/opportunites.png"
-            class="img-fluid mb-5"
-            alt="wgith about us"
-          />
+          <img src="./assets/img/opportunites.png" class="img-fluid mb-5" alt="wgith about us" />
         </div>
       </div>
     </div>
@@ -33,25 +29,23 @@
   <section>
     <div class="container">
       <ul class="nav nav-listtab justify-content-center mb-5">
-        <li>
-          <a class="active">Software Development</a>
+        <li *ngFor="let item of categoryList">
+          <a class="active">{{item?.category}}</a>
         </li>
-        <li>
-          <a routerLink="/opportunities/quality-assurance"
-            >Quality Assurance/Quality Control</a
-          >
+        <!-- <li>
+          <a routerLink="/opportunities/quality-assurance">Quality Assurance/Quality Control</a>
         </li>
         <li><a>Managed IT Services</a></li>
         <li><a>Cyber Security</a></li>
         <li><a>Cloud Services</a></li>
         <li><a>Digital Marketing and SEO</a></li>
-        <li><a>IT Products</a></li>
+        <li><a>IT Products</a></li> -->
       </ul>
       <ul class="ListMenu mt-4">
-        <li routerLink="/opportunities/web-developer">
-          <a>1. Web Development - <span>(4)</span></a>
+        <li routerLink="/opportunities/web-developer" *ngFor="let item of industryList ; let i = index">
+          <a>{{i + 1}}.{{item?.industry}} - <span>(4)</span></a>
         </li>
-        <li>
+        <!-- <li>
           <a>2. Mobile Development- <span>(4)</span></a>
         </li>
         <li>
@@ -73,17 +67,15 @@
           <a>8. Agile Software Development - <span>(4)</span></a>
         </li>
         <li>
-          <a
-            >9. DevOps and Continuous Integration/Continuous Deployment (CI/CD)
-            - <span>(4)</span></a
-          >
+          <a>9. DevOps and Continuous Integration/Continuous Deployment (CI/CD)
+            - <span>(4)</span></a>
         </li>
         <li>
           <a>10. Quality Assurance and Testing - <span>(4)</span></a>
         </li>
         <li>
           <a>11. Software Maintenance and Support - <span>(4)</span></a>
-        </li>
+        </li> -->
       </ul>
     </div>
   </section>
