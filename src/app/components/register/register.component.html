@@ -15,56 +15,72 @@
                 </div>
               </div>
               <form [formGroup]="step1Form">
-                <div class="row"> 
+                <div class="row">
                   <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                       <label>Company Name *</label>
-                      <input formControlName="companyName" placeholder="Enter company name" type="text" class="form-control" />
-                      <span class="text-danger" *ngIf="step1Form.controls.companyName?.touched && step1Form.controls.companyName?.errors?.['required']">Please enter companyName </span>
+                      <input formControlName="companyName" placeholder="Enter company name" type="text"
+                        class="form-control" />
+                      <span class="text-danger"
+                        *ngIf="step1Form.controls.companyName?.touched && step1Form.controls.companyName?.errors?.['required']">Please
+                        enter company name </span>
                     </div>
                   </div>
                   <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                       <label>Your Name *</label>
                       <input formControlName="name" placeholder="Enter name" type="text" class="form-control" />
-                      <span class="text-danger" *ngIf="step1Form.controls.name?.touched && step1Form.controls.name?.errors?.['required']">Please enter name </span>
+                      <span class="text-danger"
+                        *ngIf="step1Form.controls.name?.touched && step1Form.controls.name?.errors?.['required']">Please
+                        enter name </span>
                     </div>
                   </div>
                   <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                       <label>Your Designtion *</label>
-                      <input formControlName="designation" placeholder="Enter designation" type="text" class="form-control" />
-                      <span class="text-danger" *ngIf="step1Form.controls.designation?.touched && step1Form.controls.designation?.errors?.['required']">Please enter designation </span>
+                      <input formControlName="designation" placeholder="Enter designation" type="text"
+                        class="form-control" />
+                      <span class="text-danger"
+                        *ngIf="step1Form.controls.designation?.touched && step1Form.controls.designation?.errors?.['required']">Please
+                        enter designation </span>
                     </div>
                   </div>
                   <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                       <label>Email ID *</label>
                       <input formControlName="email" placeholder="Enter email" type="email" class="form-control" />
-                      <span class="text-danger" *ngIf="step1Form.controls.email?.touched && step1Form.controls.email?.errors?.['required']">Please enter email </span>
-                      <span class="text-danger" *ngIf="step1Form.controls.email?.touched && step1Form.controls.email?.errors?.['email']">Please enter valid email </span>
+                      <span class="text-danger"
+                        *ngIf="step1Form.controls.email?.touched && step1Form.controls.email?.errors?.['required']">Please
+                        enter email </span>
+                      <span class="text-danger"
+                        *ngIf="step1Form.controls.email?.touched && step1Form.controls.email?.errors?.['email']">Please
+                        enter valid email </span>
                     </div>
                   </div>
                   <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                       <label>Mobile Number *</label>
-                      <input maxlength="10" formControlName="number" placeholder="Enter Mobile number" type="text" class="form-control"  aria-label="Mobile Number"  (keypress)="NumberOnly($event)" [maxlength]="10" [minlength]="10" required/>
-                      <span class="text-danger" *ngIf="step1Form.controls.number?.touched && step1Form.controls.number?.errors?.['required']">Please enter mobile number </span>
+                      <input maxlength="10" formControlName="number" placeholder="Enter mobile number" type="text"
+                        class="form-control" aria-label="Mobile Number" (keypress)="NumberOnly($event)" [maxlength]="10"
+                        [minlength]="10" required />
+                      <span class="text-danger"
+                        *ngIf="step1Form.controls.number?.touched && step1Form.controls.number?.errors?.['required']">Please
+                        enter mobile number </span>
                     </div>
                   </div>
                   <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                       <label>Password *</label>
-                      <input formControlName="password" placeholder="Enter password" type="password" class="form-control" />
-                      <span class="text-danger" *ngIf="step1Form.controls.password?.touched && step1Form.controls.password?.errors?.['required']">Please enter password </span>
+                      <input formControlName="password" placeholder="Enter password" type="password"
+                        class="form-control" />
+                      <span class="text-danger"
+                        *ngIf="step1Form.controls.password?.touched && step1Form.controls.password?.errors?.['required']">Please
+                        enter password </span>
                     </div>
                   </div>
                 </div>
                 <div class="form-group text-center mt-4">
-                  <button
-                    (click)="nextStep(1)"
-                    type="button"
-                    class="btn btn-lightgray box-shadow">
+                  <button (click)="nextStep(1)" type="button" class="btn btn-lightgray box-shadow">
                     Next
                   </button>
                 </div>
@@ -129,59 +145,61 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                       </select>
-                      <span class="text-danger" *ngIf="step2Form.controls.numberOfBranch?.touched && step2Form.controls.numberOfBranch?.errors?.['required']">Please select numberOfBranch</span>
+                      <span class="text-danger"
+                        *ngIf="step2Form.controls.numberOfBranch?.touched && step2Form.controls.numberOfBranch?.errors?.['required']">Please
+                        select number of branch</span>
                     </div>
                   </div>
                   <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                       <label>Registration Number</label>
-                      <input formControlName="registerNumber" placeholder="Enter register number" type="text" class="form-control" />
+                      <input formControlName="registerNumber" placeholder="Enter registration number" type="text"
+                        class="form-control" />
                     </div>
                   </div>
                   <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
-                      <span class="input-icon" style="top: 35px !important;"
-                        ><i class="bi bi-crosshair"></i
-                      ></span>
+                      <span class="input-icon" style="top: 35px !important;"><i class="bi bi-crosshair"></i></span>
                       <label>Main Office Address *</label>
-                      <input formControlName="mainOfficeAddress" placeholder="Enter address" type="text" class="form-control" />
-                      <span class="text-danger" *ngIf="step2Form.controls.mainOfficeAddress?.touched && step2Form.controls.mainOfficeAddress?.errors?.['required']">Please enter mainOfficeAddress</span>
+                      <input formControlName="mainOfficeAddress" placeholder="Enter address" type="text"
+                        class="form-control" />
+                      <span class="text-danger"
+                        *ngIf="step2Form.controls.mainOfficeAddress?.touched && step2Form.controls.mainOfficeAddress?.errors?.['required']">Please
+                        enter main office address</span>
                     </div>
                   </div>
                   <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                       <label>Website *</label>
                       <input formControlName="website" placeholder="Enter website" type="text" class="form-control" />
-                      <span class="text-danger" *ngIf="step2Form.controls.website?.touched && step2Form.controls.website?.errors?.['required']">Please enter website</span>
+                      <span class="text-danger"
+                        *ngIf="step2Form.controls.website?.touched && step2Form.controls.website?.errors?.['required']">Please
+                        enter website</span>
                     </div>
                   </div>
                   <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                       <label>Company Contact Number </label>
-                      <input formControlName="companyContactNumber" placeholder="Enter company contact number" type="text" class="form-control" (keypress)="NumberOnly($event)"/>
+                      <input formControlName="companyContactNumber" placeholder="Enter company contact number"
+                        type="text" class="form-control" [maxlength]="10" [minlength]="10"
+                        (keypress)="NumberOnly($event)" />
                     </div>
                   </div>
                   <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                       <label>Number of Employees *</label>
-                      <input  formControlName="numberOfEmployees" placeholder="Enter number of employees" type="number" class="form-control" />
+                      <input formControlName="numberOfEmployees" placeholder="Enter number of employees" type="number"
+                        class="form-control" />
                       <!-- <span class="text-danger" *ngIf="step2Form.controls.numberOfEmployees?.touched && step2Form.controls.numberOfEmployees?.errors?.['required']">Please enter numberOfEmployees</span> -->
                     </div>
                   </div>
                   <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
-                      <label
-                        >Add Categories *
-                        <small
-                          >(Eg. Website Development, App Development
-                          Etc..,)</small
-                        ></label
-                      >
+                      <label>Add Categories *
+                        <small>(Eg. Website Development, App Development
+                          Etc..,)</small></label>
                       <ng-select mul class="form-select custom-ng-select-option" [items]="categoriesOptions"
-                      bindLabel="item_text"
-                      [multiple]="true"
-                      bindValue="item_value"
-                      formControlName="sector">
+                        bindLabel="item_text" [multiple]="true" bindValue="item_value" formControlName="sector">
                       </ng-select>
                       <!-- <select class="form-select" formControlName="sector">
                         <option value="" disabled selected>Select Categories</option>
@@ -189,22 +207,17 @@
                         <option value="categories2">Categories 2</option>
                         <option value="categories3">Categories 3</option>
                       </select> -->
-                      <span class="text-danger" *ngIf="step2Form.controls.sector?.touched && step2Form.controls.sector?.errors?.['required']">Please select sector</span>
+                      <span class="text-danger"
+                        *ngIf="step2Form.controls.sector?.touched && step2Form.controls.sector?.errors?.['required']">Please
+                        select sector</span>
                     </div>
                   </div>
                 </div>
                 <div class="form-group text-center mt-4">
-                  <button
-                    type="button"
-                    class="btn btn-lightgray box-shadow"
-                    (click)="backPage(1)">
+                  <button type="button" class="btn btn-lightgray box-shadow" (click)="backPage(1)">
                     Back
                   </button>
-                  <button
-                    type="button"
-                    class="btn btn-lightgray box-shadow"
-                    (click)="nextStep(2)"
-                  >
+                  <button type="button" class="btn btn-lightgray box-shadow" (click)="nextStep(2)">
                     Register
                   </button>
                 </div>
@@ -225,10 +238,8 @@
           <div class="col-12 text-center">
             <h1 class="HeadingTitle2">Choose Your Subscription</h1>
             <p>
-              <strong
-                >When you are subscribing for the additional services, the
-                platform fee will be deducted.</strong
-              >
+              <strong>When you are subscribing for the additional services, the
+                platform fee will be deducted.</strong>
             </p>
           </div>
         </div>
@@ -237,13 +248,8 @@
             <div class="price-card border-blue">
               <div class="card-body text-center">
                 <div class="form-check">
-                  <input
-                    class="form-check-input float-end"
-                    type="radio"
-                    id="flexRadioDefault1"
-                    value="Basic"
-                    formControlName="plan"
-                  />
+                  <input class="form-check-input float-end" type="radio" id="flexRadioDefault1" value="Basic"
+                    formControlName="plan" />
                 </div>
                 <h2 class="title blue-gradient">Basic</h2>
                 <h5 class="text-muted">INR 99999/Year</h5>
@@ -261,13 +267,8 @@
             <div class="price-card border-silver bg-light">
               <div class="card-body text-center">
                 <div class="form-check">
-                  <input
-                    class="form-check-input float-end"
-                    type="radio"
-                    id="flexRadioDefault2"
-                    value="Silver"
-                    formControlName="plan"
-                  />
+                  <input class="form-check-input float-end" type="radio" id="flexRadioDefault2" value="Silver"
+                    formControlName="plan" />
                 </div>
                 <h2 class="title silver-gradient">Silver</h2>
                 <h5 class="text-muted">INR 349999/Year</h5>
@@ -288,13 +289,8 @@
             <div class="price-card border-gold">
               <div class="card-body text-center">
                 <div class="form-check">
-                  <input
-                    class="form-check-input float-end"
-                    type="radio"
-                    id="flexRadioDefault3"
-                    value="Gold"
-                    formControlName="plan"
-                  />
+                  <input class="form-check-input float-end" type="radio" id="flexRadioDefault3" value="Gold"
+                    formControlName="plan" />
                 </div>
                 <h2 class="title gold-gradient">Gold</h2>
                 <h5 class="text-muted">INR 549999/Year</h5>
@@ -315,13 +311,8 @@
             <div class="price-card border-silver">
               <div class="card-body text-center">
                 <div class="form-check">
-                  <input
-                    class="form-check-input float-end"
-                    type="radio"
-                    id="flexRadioDefault4"
-                    value="Platinum"
-                    formControlName="plan"
-                  />
+                  <input class="form-check-input float-end" type="radio" id="flexRadioDefault4" value="Platinum"
+                    formControlName="plan" />
                 </div>
                 <h2 class="title platinum-gradient">Platinum</h2>
                 <h5 class="text-muted">INR 749999/Year</h5>
@@ -344,12 +335,7 @@
             <div class="price-card" style="min-height: 200px">
               <div class="card-body text-center">
                 <div class="form-check">
-                  <input
-                    class="form-check-input float-end"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefault"
-                  />
+                  <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault" />
                 </div>
                 <h6 class="text-theme">Professional</h6>
                 <h5 class="text-success">
@@ -366,12 +352,7 @@
             <div class="price-card" style="min-height: 200px">
               <div class="card-body text-center">
                 <div class="form-check">
-                  <input
-                    class="form-check-input float-end"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefault"
-                  />
+                  <input class="form-check-input float-end" type="checkbox" value="" id="flexCheckDefault" />
                 </div>
                 <h6 class="text-theme">Professional +</h6>
                 <h5 class="text-success">
@@ -385,19 +366,12 @@
             </div>
           </div>
         </div>
-  
+
         <div class="form-group text-center mt-4">
-          <button
-                    type="button"
-                    class="btn btn-lightgray box-shadow"
-                    (click)="backPage(1)">
-                    Back
-                  </button>
-          <button
-            type="button"
-            class="btn btn-lightgray box-shadow"
-            (click)="nextStep(3)"
-          >
+          <button type="button" class="btn btn-lightgray box-shadow" (click)="backPage(1)">
+            Back
+          </button>
+          <button type="button" class="btn btn-lightgray box-shadow" (click)="nextStep(3)">
             Proceed
           </button>
         </div>
@@ -725,16 +699,10 @@
             <div class="card-body">
               <div class="row mb-4">
                 <div class="col-12 text-center">
-                  <img
-                    src="assets/img/success-icon.gif"
-                    width="100"
-                    class="mt-5 mb-5"
-                  />
+                  <img src="assets/img/success-icon.gif" width="100" class="mt-5 mb-5" />
                   <h5 class="mb-5">
-                    <strong
-                      >Thank you for providing this information, our team will
-                      get back to you soon</strong
-                    >
+                    <strong>Thank you for providing this information, our team will
+                      get back to you soon</strong>
                   </h5>
                   <p class="text-muted">support@westgateithub.com</p>
                   <p class="text-muted">+917781978685</p>
