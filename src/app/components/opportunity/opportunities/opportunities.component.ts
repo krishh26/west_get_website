@@ -32,8 +32,8 @@ export class OpportunitiesComponent {
 
   ngOnInit(): void {
     this.getProjectList();
-    this.getcategoryList();
-    this.getindustryList();
+    // this.getcategoryList();
+    // this.getindustryList();
   }
 
   getcategoryList() {
