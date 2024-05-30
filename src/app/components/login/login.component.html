@@ -14,15 +14,16 @@
                 <button type="button" data-bs-target="#Logincarousel" data-bs-slide-to="1"
                   aria-label="Slide 2"></button>
               </div>
-              <div class="carousel-inner"  *ngFor="let item of projectList">
+              <div class="carousel-inner" *ngFor="let item of projectList">
                 <div class="carousel-item active">
                   <div class="carousel-caption d-none d-md-block">
                     <p class="mb-0"><strong>Project Name : </strong>{{item?.projectName}}</p>
-                    <!-- <p class="mb-0">{{item?.projectName}}</p> -->
+                    <p class="mb-0"><strong>Project Type : </strong>{{item?.projectType}}</p>
                     <p class="mb-0"><strong>Client : </strong>{{item?.clientName}}</p>
                     <p class="mb-0"><strong>Value : </strong> £{{item?.value}}</p>
                     <p class="mb-0"><strong>Category : </strong>{{item?.category}}</p>
-                    <p><strong>Industry : </strong>{{item?.industry}}</p>
+                    <p class="mb-0"><strong>Industry : </strong>{{item?.industry}}</p>
+                    <p class="mb-0"><strong>Website : </strong>{{item?.website}}</p>
                   </div>
                 </div>
                 <!-- <div class="carousel-item">
