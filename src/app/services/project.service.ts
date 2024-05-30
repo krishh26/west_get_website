@@ -41,6 +41,6 @@ export class ProjectService {
 
   projectList(): Observable<any> {
     return this.httpClient
-      .post<any>(this.baseUrl + AuthEndPoint.LATEST_PROJECT_LIST, { headers: this.getHeader() });
+      .get<any>(this.baseUrl + AuthEndPoint.LATEST_PROJECT_LIST, { headers: this.getHeader() });
   }
 }

@@ -69,7 +69,7 @@ export class LoginComponent implements OnInit {
       this.totalRecords = 0;
       if (response?.status == true) {
         this.showLoader = false;
-        this.projectList = response?.data?.data;
+        this.projectList = response?.data;
       } else {
         this.notificationService.showError(response?.message);
         this.showLoader = false;
