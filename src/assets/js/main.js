@@ -258,7 +258,7 @@
 
   // interval is in milliseconds. 1000 = 1 second -> so 1000 * 10 = 10 seconds
   $('#Logincarousel').carousel({
-    interval: 100 * 10
+    interval: 10 * 10
   });
 
 })();
