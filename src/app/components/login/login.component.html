@@ -8,14 +8,14 @@
           <div class="company-details mobile-hide">
 
             <div id="Logincarousel" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-indicators">
+              <!-- <div class="carousel-indicators">
                 <button type="button" data-bs-target="#Logincarousel" data-bs-slide-to="0" class="active"
                   aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#Logincarousel" data-bs-slide-to="1"
                   aria-label="Slide 2"></button>
-              </div>
-              <div class="carousel-inner" *ngFor="let item of projectList">
-                <div class="carousel-item active">
+              </div> -->
+              <div class="carousel-inner">
+                <div class="carousel-item" *ngFor="let item of projectList">
                   <div class="carousel-caption d-none d-md-block">
                     <p class="mb-0"><strong>Project Name : </strong>{{item?.projectName}}</p>
                     <p class="mb-0"><strong>Project Type : </strong>{{item?.projectType}}</p>
@@ -26,7 +26,7 @@
                     <p class="mb-0"><strong>Website : </strong>{{item?.website}}</p>
                   </div>
                 </div>
-                <!-- <div class="carousel-item">
+                <div class="carousel-item active">
                   <div class="carousel-caption d-none d-md-block">
                     <p class="mb-0"><strong>Project Name</strong></p>
                     <p class="mb-0">GB-London: Good Cause Summaries -<br>
@@ -36,7 +36,7 @@
                     <p class="mb-0"><strong>Category</strong> Business analysis consultancy services</p>
                     <p><strong>Industry </strong> IT</p>
                   </div>
-                </div> -->
+                </div>
               </div>
             </div>
           </div>
