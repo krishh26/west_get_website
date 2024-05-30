@@ -1,6 +1,7 @@
 import { ProjectService } from 'src/app/services/project.service';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { NotificationService } from 'src/app/services/notification/notification.service';
 
 @Component({
   selector: 'app-register',
@@ -9,6 +10,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent {
   activeStep: number = 1;
+  categoryList: any = [];
+  totalRecords: number = 0;
+  showLoader: boolean = false;
+
   options = [
     { item_value: 'IT Service', item_text: 'IT Service' },
     { item_value: 'IT Product', item_text: 'IT Product' },
@@ -48,10 +53,14 @@ export class RegisterComponent {
   step3Form = new FormGroup(this.step3, []);
 
   constructor(
-    private projectService: ProjectService
-  ) {
+    private projectService: ProjectService,
+    private notificationService: NotificationService,
+  ) { }
 
+  ngOnInit(): void {
+    this.getcategoryList();
   }
+
   NumberOnly(event: any): boolean {
     const charCode = event.which ? event.which : event.keyCode;
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
@@ -107,6 +116,24 @@ export class RegisterComponent {
 
   backPage(activePage: number) {
     this.activeStep = Number(activePage);
+  }
+
+  getcategoryList() {
+    this.showLoader = true;
+    this.projectService.getCategoryList().subscribe((response) => {
+      this.categoryList = [];
+      this.totalRecords = 0;
+      if (response?.status == true) {
+        this.showLoader = false;
+        this.categoryList = response?.data;
+      } else {
+        this.notificationService.showError(response?.message);
+        this.showLoader = false;
+      }
+    }, (error) => {
+      this.notificationService.showError(error?.message);
+      this.showLoader = false;
+    });
   }
 
 }

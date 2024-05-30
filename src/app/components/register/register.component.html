@@ -198,8 +198,8 @@
                       <label>Add Categories *
                         <small>(Eg. Website Development, App Development
                           Etc..,)</small></label>
-                      <ng-select mul class="form-select custom-ng-select-option" [items]="categoriesOptions"
-                        bindLabel="item_text" [multiple]="true" bindValue="item_value" formControlName="sector">
+                      <ng-select mul class="form-select custom-ng-select-option" [items]="categoryList"
+                        bindLabel="category" [multiple]="true" bindValue="category" formControlName="sector">
                       </ng-select>
                       <!-- <select class="form-select" formControlName="sector">
                         <option value="" disabled selected>Select Categories</option>
