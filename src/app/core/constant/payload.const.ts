@@ -7,7 +7,8 @@ export const Payload = {
         applied: false,
         sortlist: false,
         match: "",
-        status: ""
+        status: "",
+        createdDate:""
     },
 
     mailSSList: {

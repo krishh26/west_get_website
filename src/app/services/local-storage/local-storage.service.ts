@@ -1,13 +1,9 @@
-import { EventEmitter, Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocalStorageService {
-
-  imageChangeEvent: BehaviorSubject<string | null> = new BehaviorSubject<string | null>(null);;
 
   constructor() { }
 
@@ -46,13 +42,5 @@ export class LocalStorageService {
   // Function to use for the clear localStorage
   clearStorage(): void {
     localStorage.clear();
-  }
-
-  emitImageChangeEvent(imageData: string): void {
-    this.imageChangeEvent.next(imageData);
-  }
-
-  getImageData(): BehaviorSubject<string | null> {
-    return this.imageChangeEvent;
   }
 }

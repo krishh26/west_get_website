@@ -31,23 +31,23 @@
       <div class="row align-items-center mb-5">
         <div class="col-lg-6 col-xl-6 col-12 mob-mb1">
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+            <input class="form-check-input" type="radio" checked (change)="radioSelected($event)"  name="inlineRadioOptions" id="inlineRadio1" value="today" />
             <label class="form-check-label" for="inlineRadio1">Today</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+            <input class="form-check-input" type="radio" (change)="radioSelected($event)" name="inlineRadioOptions" id="inlineRadio2" value="today" />
             <label class="form-check-label" for="inlineRadio2">This Week</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+            <input class="form-check-input" type="radio" name="inlineRadioOptions"  data-bs-toggle="modal" data-bs-target="#RegisterUsModal" id="inlineRadio1" value="redirectToRegistration" />
             <label class="form-check-label" for="inlineRadio1">This Month</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+            <input class="form-check-input" type="radio" name="inlineRadioOptions"  data-bs-toggle="modal" data-bs-target="#RegisterUsModal" id="inlineRadio2" value="redirectToRegistration" />
             <label class="form-check-label" for="inlineRadio2">This Year</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+            <input class="form-check-input" type="radio" name="inlineRadioOptions"  data-bs-toggle="modal" data-bs-target="#RegisterUsModal" id="inlineRadio1" value="redirectToRegistration" />
             <label class="form-check-label" for="inlineRadio1">Histroy Data</label>
           </div>
         </div>
@@ -89,96 +89,51 @@
           </div>
         </div>
       </div> -->
-      <div class="card card-gradient1 border-radius16 mb-4">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-lg-3 col-xl-3 col-12">
-              <p><strong>Project Name</strong></p>
-              <p>Website Development Project</p>
-            </div>
-            <div class="col-lg-2 col-xl-2 col-12">
-              <p><strong>Project Value</strong></p>
-              <p>300K GBP</p>
-            </div>
-            <div class="col-lg-5 col-xl-5 col-12">
-              <p><strong>Project Description</strong></p>
-              <p class="mb-0 p-13">
-                Choose Westgate as your preferred partner for unparalleled
-                access to UK Public Sector IT Projects. With our unmatched
-                expertise and strategic partnerships, Indian IT companies
-                benefit from seamless project execution, operational excellence,
-                and dedicated support. We ensure maximum profitability, while
-                our commitment to success guarantees unparalleled value and
-                growth opportunities. Entrust Westgate to elevate your ventures
-                to new heights in the dynamic UK IT market.
-              </p>
-            </div>
-            <div class="col-lg-2 col-xl-2 col-12 text-center">
-              <a href="#" class="btn btn-link mt-5">View More ></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card card-gradient1 border-radius16 mb-4">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-lg-3 col-xl-3 col-12">
-              <p><strong>Project Name</strong></p>
-              <p>Website Development Project</p>
-            </div>
-            <div class="col-lg-2 col-xl-2 col-12">
-              <p><strong>Project Value</strong></p>
-              <p>300K GBP</p>
-            </div>
-            <div class="col-lg-5 col-xl-5 col-12">
-              <p><strong>Project Description</strong></p>
-              <p class="mb-0 p-13">
-                Choose Westgate as your preferred partner for unparalleled
-                access to UK Public Sector IT Projects. With our unmatched
-                expertise and strategic partnerships, Indian IT companies
-                benefit from seamless project execution, operational excellence,
-                and dedicated support. We ensure maximum profitability, while
-                our commitment to success guarantees unparalleled value and
-                growth opportunities. Entrust Westgate to elevate your ventures
-                to new heights in the dynamic UK IT market.
-              </p>
-            </div>
-            <div class="col-lg-2 col-xl-2 col-12 text-center">
-              <a href="#" class="btn btn-link mt-5">View More ></a>
+      <ng-container *ngFor="let project of projectList">
+        <div class="card card-gradient1 border-radius16 mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-3 col-xl-3 col-12">
+                <p><strong>Project Name</strong></p>
+                <p>{{project.projectName}}</p>
+              </div>
+              <div class="col-lg-3 col-xl-3 col-12">
+                <p><strong>Project Value</strong></p>
+                <p>{{project.value}}</p>
+              </div>
+              <div class="col-lg-3 col-xl-3 col-12">
+                <p><strong>Category</strong></p>
+                <p>{{project.category}}</p>
+              </div>
+              <div class="col-lg-3 col-xl-3 col-12">
+                <p><strong>Industry</strong></p>
+                <p>{{project.industry}}</p>
+              </div>
+              <div class="col-lg-3 col-xl-3 col-12">
+                <p><strong>Publish Date</strong></p>
+                <p>{{project.publishDate | date : 'MM/dd/yyyy'}}</p>
+              </div>
+              <div class="col-lg-3 col-xl-3 col-12">
+                <p><strong>Due Date</strong></p>
+                <p>{{project.dueDate | date : 'MM/dd/yyyy'}}</p>
+              </div>
+              <div class="col-lg-6 col-xl-6 col-12">
+                <p><strong>Project Description</strong></p>
+                <p class="mb-0 p-13">
+                  {{project.description}}
+                </p>
+              </div>
+              <div class="text-center">
+                <a href="#" class="btn btn-link">View More ></a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="card card-gradient1 border-radius16 mb-4">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-lg-3 col-xl-3 col-12">
-              <p><strong>Project Name</strong></p>
-              <p>Website Development Project</p>
-            </div>
-            <div class="col-lg-2 col-xl-2 col-12">
-              <p><strong>Project Value</strong></p>
-              <p>300K GBP</p>
-            </div>
-            <div class="col-lg-5 col-xl-5 col-12">
-              <p><strong>Project Description</strong></p>
-              <p class="mb-0 p-13">
-                Choose Westgate as your preferred partner for unparalleled
-                access to UK Public Sector IT Projects. With our unmatched
-                expertise and strategic partnerships, Indian IT companies
-                benefit from seamless project execution, operational excellence,
-                and dedicated support. We ensure maximum profitability, while
-                our commitment to success guarantees unparalleled value and
-                growth opportunities. Entrust Westgate to elevate your ventures
-                to new heights in the dynamic UK IT market.
-              </p>
-            </div>
-            <div class="col-lg-2 col-xl-2 col-12 text-center">
-              <a href="#" class="btn btn-link mt-5">View More ></a>
-            </div>
-          </div>
-        </div>
-      </div>
+      </ng-container>
+
+      <ng-container *ngIf="!(projectList && projectList.length)">
+        <p class="text-center">No records found</p>
+      </ng-container>
 
       <!-- <div class="form-group">
         <label>Share your expertise if it is not listed here</label>
@@ -190,3 +145,28 @@
     </div>
   </section>
 </main>
+<div class="modal fade" id="RegisterUsModal" tabindex="-1" aria-labelledby="RegisterUsModalLebel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="display: block;">
+        <div class="row">
+          <div class="col-12 modal-title">
+            <P class="mb-0">View detail</P>
+          </div>
+        </div>
+        <button type="button" class="btn-close btn-fix" data-bs-dismiss="modal" aria-label="Close"><i
+            class="bi bi-x-lg"></i></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Register with us to view details.
+        </p>
+      </div>
+      <div class="modal-footer" style="display: block;">
+        <div class="row justi-content-between">
+          <button type="button" class="btn btn-primary" [routerLink]="['/register']" data-bs-dismiss="modal" aria-label="Close">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

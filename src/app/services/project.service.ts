@@ -57,11 +57,14 @@ export class ProjectService {
       .get<any>(this.baseUrl + AuthEndPoint.INDUSTRY_LIST, { headers: this.getHeader() });
   }
 
-  getProjectList(params: { keyword: string, page: string, limit: string, status: string }): Observable<any> {
+  getProjectList(params: { keyword: string, page: string, limit: string, status: string, createdDate?:string }): Observable<any> {
     const url = `${this.baseUrl}${AuthEndPoint.PROJECT_LIST}`;
 
     let queryParams = new HttpParams();
     queryParams = queryParams.set('keyword', params?.keyword || '');
+    if(params.createdDate){
+      queryParams = queryParams.set('createdDate', params?.createdDate);
+    }
     queryParams = queryParams.set('page', params?.page);
     queryParams = queryParams.set('limit', params?.limit);
     // if (params?.applied) {

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { formatDate } from '@angular/common';
+import { Component, TemplateRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { pagination } from 'src/app/core/constant/pagination.constant';
 import { Payload } from 'src/app/core/constant/payload.const';
@@ -17,21 +18,22 @@ export class OpportunitiesComponent {
   categoryList: any = [];
   industryList: any = [];
   totalRecords: number = pagination.totalRecords;
-
+  todayDate = formatDate(new Date(), 'yyyy-MM-dd', 'en-US')
+  selectedValue: string = 'today';
   projectList: any = [];
   page: number = pagination.page;
   pagesize = pagination.itemsPerPage;
-
+  content: TemplateRef<any> | undefined;
   constructor(
     private projectService: ProjectService,
     private notificationService: NotificationService,
     private router: Router,
-    private localStorageService: LocalStorageService
+    private localStorageService: LocalStorageService,
   ) {
+    this.getProjectList(this.todayDate);
   }
 
   ngOnInit(): void {
-    this.getProjectList();
     // this.getcategoryList();
     // this.getindustryList();
   }
@@ -72,9 +74,9 @@ export class OpportunitiesComponent {
     });
   }
 
-  getProjectList() {
+  getProjectList(filter:string) {
     this.showLoader = true;
-   // Payload.projectList.keyword = String(this.searchText?.value) || "";
+   Payload.projectList.createdDate = String(filter);
     Payload.projectList.page = String(this.page);
     Payload.projectList.limit = String(this.pagesize);
     Payload.projectList.applied = false;
@@ -95,4 +97,12 @@ export class OpportunitiesComponent {
     });
   }
 
+
+  radioSelected(event:any){
+    this.selectedValue = event?.target?.value;
+    if(this.selectedValue == 'today'){
+    let todayDate = formatDate(new Date(), 'yyyy-MM-dd', 'en-US')
+      this.getProjectList(todayDate)
+    }
+  }
 }

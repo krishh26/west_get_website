@@ -83,7 +83,7 @@
 <!-- <div id="preloader"></div> -->
 <div class="live-chat-buttons">
   <a routerLink="/faq"><img src="./assets/img/faq-icon.png" width="38" /><br>FAQ</a>
-  <a href="javascript;" data-bs-toggle="modal" data-bs-target="#QuickChatModal"><img
+  <a href="javascript;" data-bs-toggle="modal" data-bs-target="#QuickChatModal" (click)="getChatBetweenTwoUser()"><img
       src="./assets/img/live-chat-icon.png" width="38" /><br><span class="text-danger">Live</span> chat</a>
 </div>
 
@@ -103,13 +103,15 @@
       </div>
       <div class="modal-body">
         <ul class="chatHistory">
-          <li class="replies">
-            <p>Hi</p>
+          <ng-container *ngFor="let message of chatList">
+          <li class="replies" *ngIf="message?.messageFor == 'User'">
+            <p>{{message?.message}}</p>
           </li>
-          <li class="sender">
-            <p>Hey there, please leave your details so we can contact you even if you are no longer on the site.</p>
+          <li class="sender" *ngIf="message?.messageFor == 'Admin'">
+            <p>{{message?.message}}</p>
           </li>
-          <li class="sender">
+        </ng-container>
+          <!-- <li class="sender">
             <form class="Form-message">
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Full Name">
@@ -124,7 +126,7 @@
                 <button type="submit" class="btn btn-dark w-100">SUBMIT</button>
               </div>
             </form>
-          </li>
+          </li> -->
         </ul>
 
       </div>
@@ -132,15 +134,14 @@
         <div class="row justi-content-between">
           <div class="col-10 p-0">
             <div class="form-group mb-0">
-              <input type="text" class="form-control border-0" placeholder="Message...">
+              <input type="text" class="form-control border-0" placeholder="Message..." [formControl]="chatMessage">
             </div>
           </div>
           <div class="col-2 text-center">
-            <button type="button" class="btn btn-send-message"><i class="bi bi-send-fill"></i></button>
+            <button type="button" class="btn btn-send-message"><i class="bi bi-send-fill" (click)="sendMessage()"></i></button>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
